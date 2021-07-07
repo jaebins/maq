@@ -1,0 +1,38 @@
+<head>
+  <title>암산</title>
+  <meta charset="utf-8">
+  <script src="jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="ControlCss.css">
+</head>
+<body>
+  <script src="Game.js" type="text/javascript"></script>
+
+  <div class="all-control">
+    <div class="head-title">
+      암산대결
+    </div>
+    <div class="head-life">
+      라이프 : 5
+    </div>
+    <div class="body-lobby">
+      <img class="main-picture" src="Images/MainPicture.jpg" alt="메인 이미지" width="40%" height="40%">
+    </div>
+    <div class="body-lobby-control">
+      <button id="lobbyBut" class="but_difficulty_eazy" type="button" onclick="start('eazy')">쉬움</button>
+      <button id="lobbyBut" class="but_difficulty_common" type="button" onclick="start('common')">보통</button>
+      <button id="lobbyBut" class="but_difficulty_hard" type="button" onclick="start('hard')">어려움</button>
+      <button id="lobbyBut" class="but_difficulty_expert" type="button" onclick="start('expert')">매우 어려움</button>
+    </div>
+    <div class="game-text">
+      <div class="question_Number"></div>
+    </div>
+    <div class="game-control">
+      <button id="gameBut" class="but_answer_0" type="button" onclick="confirmAnswer(0)">null</button>
+      <button id="gameBut" class="but_answer_1" type="button" onclick="confirmAnswer(1)">null</button>
+      <button id="gameBut" class="but_answer_2" type="button" onclick="confirmAnswer(2)">null</button>
+      <button id="gameBut" class="but_answer_3" type="button" onclick="confirmAnswer(3)">null</button>
+    </div>
+    <div class="gameover-text"><em>게임오버</em></div>
+    <div class="gameover-text-succesful">50개</div>
+  </div>
+</body>
