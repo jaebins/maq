@@ -26,10 +26,23 @@ body{
 .body-lobby{
   margin-top: 50px;
 }
+.body-timer{
+  margin-left: 40px;
+  margin-top: 10%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: fantasy;
+  float: left;
+}
+.main-picture{
+  float: none;
+  margin-right: 60px;
+}
 .body-lobby-control{
   margin-top: 80px;
 }
 .question_Number{
+  margin-right: 80px;
   font-size: 60px;
   font-weight: bold;
   font-family: "Last Ninja", Impact, fantasy;
@@ -41,6 +54,7 @@ body{
   margin-top: 50px;
 }
 .gameover-text{
+  margin-right: 80px;
   margin-top: 50px;
   font-weight: bold;
   font-size: 50px;

@@ -1,4 +1,4 @@
-
+var timer;
 
 var diffCount;
 var answer;
@@ -32,9 +32,23 @@ function start(diff){
   }
   $(".body-lobby").fadeOut();
   $(".body-lobby-control").fadeOut();
+  $(".body-count").fadeIn();
   $(".game-text").fadeIn();
   $(".game-control").fadeIn();
+  startCount();
   makeQuestion();
+}
+
+function startCount(){
+  var timerCount = 60;
+  document.getElementsByClassName('body-timer')[0].innerHTML = timerCount + "초";
+  timer = setInterval(function(){
+    timerCount -= 1;
+    document.getElementsByClassName('body-timer')[0].innerHTML = timerCount + "초";
+    if(timerCount == 0){
+      gameOver();
+    }
+  }, 1000);
 }
 
 function makeQuestion(){
@@ -75,13 +89,18 @@ function confirmAnswer(selectAnswer){
 
 function wrongAnswer(){
   life = life - 1;
-  var selectAnswerValue = document.getElementsByClassName("head-life")[0].innerHTML = life;
-  var selectAnswerValue = document.getElementsByClassName("gameover-text-succesful")[0].innerHTML = answerCount + "만큼 맞췄습니다.";
+  document.getElementsByClassName("head-life")[0].innerHTML = life;
   if(life == 0){
-    alert("게임 오버!");
-    $(".game-text").fadeOut();
-    $(".game-control").fadeOut();
-    $(".gameover-text").fadeIn();
-    $(".gameover-text-succesful").fadeIn();
+    gameOver();
   }
+}
+
+function gameOver(){
+  clearInterval(timer);
+  alert("게임 오버!");
+  document.getElementsByClassName("gameover-text-succesful")[0].innerHTML = answerCount + "개만큼이나 맞췄습니다.";
+  $(".game-text").fadeOut();
+  $(".game-control").fadeOut();
+  $(".gameover-text").fadeIn();
+  $(".gameover-text-succesful").fadeIn();
 }
